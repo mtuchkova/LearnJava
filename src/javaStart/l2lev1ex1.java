@@ -11,7 +11,6 @@ public class l2lev1ex1 {
           System.out.print("Enter a 5 digit number:");
           int x = sc.nextInt();
           System.out.println(x);
-//        try{
             int q = x / 10000;
             int w = x % 10000 / 1000;
             int e = x % 1000 / 100;
