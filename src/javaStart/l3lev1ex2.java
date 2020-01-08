@@ -10,31 +10,6 @@ public class l3lev1ex2 {
 //        Если такой квартиры нет в этом доме то нужно сообщить об этом пользователю.
 
 
-        Scanner sc = new Scanner();
-        System.out.println("Enter apartment number: ");
-        int apartmentNumber = sc.nextInt();
-
-        if (apartmentNumber > 144) {
-
-            System.out.println("There is no such apartment");
-
-        } else if (1 <= apartmentNumber <= 36){
-
-            System.out.println("entrance number: 1");
-
-        } else if (36 < apartmentNumber <= 72){
-
-            System.out.println("entrance number: 2");
-
-        } else if (72 < apartmentNumber <= 108){
-
-            System.out.println("entrance number: 2");
-
-        } else (108 < apartmentNumber <= 144){
-
-            System.out.println("entrance number: 2");
-
-        }
 
 
 
@@ -54,67 +29,67 @@ public class l3lev1ex2 {
         }
 
         //
-
-
-        Scanner sc = new Scanner (System.in);
-
-        int n;
-        int a;
-        System.out.println("Input number from 1 to 144");
-        n = sc.nextInt();
-
-        if (n >= 1 && n <= 36) {
-            System.out.println("Entrance 1");
-        }
-        if (n >= 37 && n <= 72) {
-            System.out.println("Entrance 2");
-        }
-        if (n >= 73 && n <= 108) {
-            System.out.println("Entrance 3");
-        }
-        if (n >= 109 && n <= 144) {
-            System.out.println("Entrance 4");
-        }
-
-        a = n % 36;
-
-        if (a >= 1 && a <= 4) {
-            System.out.println("Floor 1");
-        }
-        if (a >= 5 && a <= 8) {
-            System.out.println("Floor 2");
-        }
-        if (a >= 9 && a <= 12) {
-            System.out.println("Floor 3");
-        }
-        if (a >= 13 && a <= 16) {
-            System.out.println("Floor 4");
-        }
-        if (a >= 17 && a <= 20) {
-            System.out.println("Floor 5");
-        }
-        if (a >= 21 && a <= 24) {
-            System.out.println("Floor 6");
-        }
-        if (a >= 25 && a <= 28) {
-            System.out.println("Floor 7");
-        }
-        if (a >= 29 && a <= 32) {
-            System.out.println("Floor 8");
-        }
-        if (a >= 33 && a <= 36) {
-            System.out.println("Floor 9");
-        }
-        if (n == 36 || n == 72 || n == 108 || n == 144) {
-            System.out.println("Floor 9");
-        }
-    }
     //
+    //
+    //        Scanner sc = new Scanner (System.in);
+    //
+    //        int n;
+    //        int a;
+    //        System.out.println("Input number from 1 to 144");
+    //        n = sc.nextInt();
+    //
+    //        if (n >= 1 && n <= 36) {
+    //            System.out.println("Entrance 1");
+    //        }
+    //        if (n >= 37 && n <= 72) {
+    //            System.out.println("Entrance 2");
+    //        }
+    //        if (n >= 73 && n <= 108) {
+    //            System.out.println("Entrance 3");
+    //        }
+    //        if (n >= 109 && n <= 144) {
+    //            System.out.println("Entrance 4");
+    //        }
+    //
+    //        a = n % 36;
+    //
+    //        if (a >= 1 && a <= 4) {
+    //            System.out.println("Floor 1");
+    //        }
+    //        if (a >= 5 && a <= 8) {
+    //            System.out.println("Floor 2");
+    //        }
+    //        if (a >= 9 && a <= 12) {
+    //            System.out.println("Floor 3");
+    //        }
+    //        if (a >= 13 && a <= 16) {
+    //            System.out.println("Floor 4");
+    //        }
+    //        if (a >= 17 && a <= 20) {
+    //            System.out.println("Floor 5");
+    //        }
+    //        if (a >= 21 && a <= 24) {
+    //            System.out.println("Floor 6");
+    //        }
+    //        if (a >= 25 && a <= 28) {
+    //            System.out.println("Floor 7");
+    //        }
+    //        if (a >= 29 && a <= 32) {
+    //            System.out.println("Floor 8");
+    //        }
+    //        if (a >= 33 && a <= 36) {
+    //            System.out.println("Floor 9");
+    //        }
+    //        if (n == 36 || n == 72 || n == 108 || n == 144) {
+    //            System.out.println("Floor 9");
+    //        }
+    //    }
+    //    //
 
 
-    Scanner sc = new Scanner(System.in);
+    Scanner sc1 = new Scanner(System.in);
 		System.out.println("Input number of apartment:");
-    int num = sc.nextInt();
+    int num = sc1.nextInt();
     int entracne = 0;
     int floor = 0;
     int temp = 0;
