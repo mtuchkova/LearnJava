@@ -1,4 +1,6 @@
-package javaOOP;
+package javaOOP.lesson1;
+
+import javaOOP.lesson1.Car;
 
 public class Main {
 
@@ -11,8 +13,8 @@ public class Main {
 
 
      Car car2 = new Car();
-car2.getColor();
-car2.setColor("rfr");
+        car2.getColor();
+        car2.setColor("rfr");
 
         System.out.println(car1);
         System.out.println(car2);

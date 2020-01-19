@@ -1,4 +1,4 @@
-package javaOOP;
+package javaOOP.lesson1;
 
 public class Car {
     String color;
