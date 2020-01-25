@@ -17,8 +17,7 @@ public class Car {
     }
 
     @Override
-    public String
-    toString() {
+    public String toString() {
         return "Car{" +
                 "color='" + color + '\'' +
                 '}';

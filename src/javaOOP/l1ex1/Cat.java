@@ -80,7 +80,7 @@ public class Cat {
 
 
     protected void feedCat() {
-            System.out.println("You have to feed " + this.name + " with " + this.favoriteFood + ".");
+            System.out.println("You have to feed " + name + " with " + favoriteFood + ".");
     }
 
     protected void cuddleCat() {
@@ -89,6 +89,7 @@ public class Cat {
         } else {
             System.out.println("The cat doesn't like to cuddle");
         }
+
     }
 
 
