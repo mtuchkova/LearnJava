@@ -23,7 +23,7 @@ public class Group {
     }
 
     public void addStudentToGroup(Student student) {
-        groupOne.se
+
     }
 
     public void deleteStudentFromGroup() {

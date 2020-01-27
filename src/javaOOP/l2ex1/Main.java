@@ -19,8 +19,16 @@ public class Main {
         Point pointB = new Point(2,8);
         Point pointC = new Point(1,5);
 
+
+
+        Point pointD = new Point(3,0);
+        Point pointE= new Point(6,0);
+        Point pointF= new Point(6,4);
+        Point pointG= new Point(3,4);
+
         Circle circleOne = new Circle( "circleOne", pointA, pointB);
         Triangle triangleOne = new Triangle("triangleOne", pointA, pointB, pointC);
+        Rectangle rectangleOne = new Rectangle("rectangleOne", pointD, pointE, pointF, pointG);
 
         System.out.println(circleOne);
         circleOne.getPerimetr();
@@ -34,6 +42,12 @@ public class Main {
         System.out.println(triangleOne.getPerimetr());
         System.out.println(triangleOne);
 
+
+        System.out.println(rectangleOne);
+        System.out.println(rectangleOne.getArea());
+
+        System.out.println(rectangleOne.getPerimetr());
+        System.out.println(rectangleOne);
 
 
     }
