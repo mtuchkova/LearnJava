@@ -13,7 +13,7 @@ public class Main {
 //
 
 
-        Student studentOne = new Student("Oksana", 25, "cycling",true,1 );
+        Student studentOne = new Student("Oksana", 25, "cycling",true,true,1 );
         Group groupOne = new Group();
 
 

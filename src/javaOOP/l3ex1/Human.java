@@ -7,12 +7,14 @@ public class Human {
     private int age;
     private String hobby;
     private  boolean isHappy;
+    private  boolean sex;
 
-    public Human(String name, int age, String hobby, boolean isHappy) {
+    public Human(String name, int age, String hobby, boolean isHappy, boolean sex) {
         this.name = name;
         this.age = age;
         this.hobby = hobby;
         this.isHappy = isHappy;
+        this.sex = sex;
     }
 
     public Human() {
@@ -51,6 +53,13 @@ public class Human {
         isHappy = happy;
     }
 
+    public boolean isSex() {
+        return sex;
+    }
+
+    public void setSex(boolean sex) {
+        this.sex = sex;
+    }
 
     @Override
     public String toString() {
@@ -59,6 +68,7 @@ public class Human {
                 ", age=" + age +
                 ", hobby='" + hobby + '\'' +
                 ", isHappy=" + isHappy +
+                ", sex=" + sex +
                 '}';
     }
 }

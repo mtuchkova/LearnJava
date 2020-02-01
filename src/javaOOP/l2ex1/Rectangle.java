@@ -3,10 +3,10 @@ package javaOOP.l2ex1;
 public class Rectangle  extends Shape{
 
 
-    Point pointA;
-    Point pointB;
-    Point pointC;
-    Point pointD;
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
+    private Point pointD;
     private double perimetr;
     private double area;
     private String name;

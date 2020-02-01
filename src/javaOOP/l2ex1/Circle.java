@@ -3,8 +3,8 @@ package javaOOP.l2ex1;
 public class Circle extends Shape {
 
 
-    Point pointA;
-    Point pointB;
+    private Point pointA;
+    private Point pointB;
     private double perimetrCircle;
     private double areaCircle;
     private double radiusCircle;

@@ -2,9 +2,9 @@ package javaOOP.l2ex1;
 
 public class Triangle extends Shape {
 
-    Point pointA;
-    Point pointB;
-    Point pointC;
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
     private double perimetr;
 
 
