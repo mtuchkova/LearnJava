@@ -1,5 +1,7 @@
 package javaOOP.l3ex1;
 
+import javaOOP.l3ex1.exception.OutOfSizeGroupExeption;
+
 public class Group {
 
 
@@ -8,7 +10,7 @@ public class Group {
 
 
     public Group(String groupName) {
-        groupName = groupName;
+        this.groupName = groupName;
     }
 
     public Group() {
@@ -22,14 +24,20 @@ public class Group {
         groupName = groupName;
     }
 
-    public void addStudentToGroup(Student student) {
+    public void addStudentToGroup(Student student) throws OutOfSizeGroupExeption {
 
+        if (student == null){
+            throw new IllegalArgumentException("Student is null");
+        }
         for ( int i = 0; i < studentsArray.length; i++) {
             if (studentsArray[i] == null){
                 studentsArray[i] = student;
+                student.setGroup(this.groupName);
+                System.out.println("Студент " + student.getName() + " записан в группу " + groupName);
+                return;
             }
         }
-
+        throw new OutOfSizeGroupExeption();
 
     }
 

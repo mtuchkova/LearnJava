@@ -1,5 +1,7 @@
 package javaOOP.l3ex1;
 
+import javaOOP.l3ex1.exception.OutOfSizeGroupExeption;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -13,9 +15,27 @@ public class Main {
 //
 
 
-        Student studentOne = new Student("Oksana", 25, "cycling",true,true,1 );
-        Group groupOne = new Group();
 
+        Group groupOne = new Group("FE-81mp");
+
+       try {
+           groupOne.addStudentToGroup(new Student("Oksana", 25, "cycling",true,true,1,"FE-81mp" ));
+           groupOne.addStudentToGroup(new Student("Masha", 5, "cycling",true,true,3,"FE-81mp" ));
+           groupOne.addStudentToGroup(new Student("Petr", 23, "hiking",true,false,4,"FE-81mp" ));
+           groupOne.addStudentToGroup(new Student("Denis", 18, "cycling",true,false,5,"FE-81mp" ));
+           groupOne.addStudentToGroup(new Student("Paul", 16, "drawing",true,false,6 ,"FE-81mp"));
+           groupOne.addStudentToGroup(new Student("Rita", 27, "reading books",true,true,7 ,"FE-81mp"));
+           groupOne.addStudentToGroup(new Student("Konstantin", 31, "cycling",true,false,8,"FE-81mp"));
+           groupOne.addStudentToGroup(new Student("Mia", 21, "cycling",true,true,9 ,"FE-81mp"));
+           groupOne.addStudentToGroup(new Student());
+//           groupOne.addStudentToGroup(null);
+           groupOne.addStudentToGroup(new Student("Milena", 26, "shopping",true,true,10 ,"FE-81mp"));
+           groupOne.addStudentToGroup(new Student("Dima", 22, "painting",true,false,11 ,"FE-81mp"));
+           groupOne.addStudentToGroup(new Student("Pasha", 20, "driving",true,false,12 ,"FE-81mp"));
+
+       } catch (OutOfSizeGroupExeption e) {
+           System.out.println(e.getMessage());
+       }
 
     }
 }
