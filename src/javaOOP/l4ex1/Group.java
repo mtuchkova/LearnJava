@@ -1,14 +1,14 @@
-package javaOOP.l3ex1;
+package javaOOP.l4ex1;
 
-import javaOOP.l3ex1.exception.OutOfSizeGroupExeption;
-
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Group {
 
 
+
     private String groupName;
     private Student[] studentsArray = new Student[10];
+
 
 
     public Group(String groupName) {
@@ -36,13 +36,76 @@ public class Group {
         int i = 0;
         for (Student student : studentsArray) {
 
-                sb.append((++i) + ") ").append(student);
-                sb.append(System.lineSeparator());
+            sb.append((++i) + ") ").append(student);
+            sb.append(System.lineSeparator());
 
         }
         return sb.toString();
 
 
+    }
+
+
+
+    public void addStudentToGroupCondole() throws OutOfSizeGroupExeption {
+
+        Student newStudent = new Student();
+
+        newStudent.setGroup(this.groupName);
+
+        System.out.print("Enter record book number: ");
+        newStudent.setRecordBook(getIntValue());
+        sc.nextLine();
+
+        System.out.print("Enter name: ");
+        newStudent.setName(getStringValue());
+
+        System.out.print("Enter age: ");
+        newStudent.setAge(getIntValue());
+        sc.nextLine();
+
+
+        System.out.print("Enter sex: ");
+        newStudent.setSex(getSex());
+        System.out.println(newStudent);
+
+
+
+        for ( int i = 0; i < studentsArray.length; i++) {
+            if (studentsArray[i] == null){
+                studentsArray[i] = newStudent;
+                newStudent.setGroup(this.groupName);
+                System.out.println(newStudent.getName() + " added to group " + groupName);
+                return;
+            }
+        }
+        throw new OutOfSizeGroupExeption();
+    }
+
+    Scanner sc = new Scanner(System.in);
+
+    public String getStringValue () {
+      if(sc.hasNextLine()) {
+          return sc.nextLine();
+      }
+        throw new IllegalArgumentException("Here should be string value!");
+    }
+
+    public boolean getSex () {
+        String sex = sc.nextLine();
+        if(sex.equals("female")) {
+            return true;
+        } else if (sex.equals("male")){
+            return false;
+        }
+        throw new IllegalArgumentException("Here should be (female/male)string value!");
+    }
+
+    public int getIntValue () {
+        if(sc.hasNextInt()) {
+            return sc.nextInt();
+        }
+        throw new IllegalArgumentException("Here should be int value!");
     }
 
 
@@ -90,5 +153,4 @@ public class Group {
 
         return null;
     }
-
 }
