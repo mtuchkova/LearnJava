@@ -26,6 +26,9 @@ public class Group {
         groupName = groupName;
     }
 
+    public Student[] getStudentsArray() {
+        return studentsArray;
+    }
 
     @Override
     public String toString() {

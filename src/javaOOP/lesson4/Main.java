@@ -25,9 +25,7 @@ public class Main {
 //        Arrays.sort(cats, new CatAgeComparator().reversed());
         Arrays.sort(cats, new CatAgeComparator());
 
-        for (Cat cat : cats) {
-            System.out.println(cat);
-        }
+
 
 
     }
