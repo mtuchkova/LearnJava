@@ -2,6 +2,8 @@ package javaOOP.l3ex1;
 
 import javaOOP.l3ex1.exception.OutOfSizeGroupExeption;
 
+import java.util.Arrays;
+
 public class Group {
 
 
@@ -24,6 +26,27 @@ public class Group {
         groupName = groupName;
     }
 
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Group: " + this.groupName).append(System.lineSeparator());
+
+        int i = 0;
+        for (Student student : studentsArray) {
+           // if (student != null) {
+                sb.append((++i) + ") ").append(student);
+                sb.append(System.lineSeparator());
+           // }
+        }
+        return sb.toString();
+
+
+    }
+
+
+
     public void addStudentToGroup(Student student) throws OutOfSizeGroupExeption {
 
         if (student == null){
@@ -33,7 +56,7 @@ public class Group {
             if (studentsArray[i] == null){
                 studentsArray[i] = student;
                 student.setGroup(this.groupName);
-                System.out.println("Студент " + student.getName() + " записан в группу " + groupName);
+                System.out.println(student.getName() + " added to group " + groupName);
                 return;
             }
         }
@@ -41,16 +64,31 @@ public class Group {
 
     }
 
-//    public void deleteStudentFromGroup() {
-//
-//    }
+    public boolean deleteStudentFromGroup(int recordBook) {
+        for ( int i = 0; i < studentsArray.length; i++) {
+            if (studentsArray[i] != null && studentsArray[i].getRecordBook() == recordBook){
+                studentsArray[i] = null;
+                System.out.println("Student with record book " + recordBook + " removed from " + groupName);
+                return true ;
+            }
+
+        }
+
+        System.out.println("There is no such student! record book: " + recordBook);
+        return false;
+    }
 
 
 
-//
-//    public Student searchStudentInGroup(name) {
-//
-//        return Student;
-//    }
+
+    public Student searchStudentInGroup(String name) {
+        for ( Student student : studentsArray) {
+            if (student != null && student.getName().equals(name)){
+                return student;
+            }
+        }
+
+        return null;
+    }
 
 }
