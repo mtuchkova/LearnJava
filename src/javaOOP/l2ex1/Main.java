@@ -14,11 +14,9 @@ public class Main {
 //        5. * Нарисуйте UML диаграмму проекта.
 
 
-
         Point pointA = new Point(3,1);
         Point pointB = new Point(2,8);
         Point pointC = new Point(1,5);
-
 
 
         Point pointD = new Point(3,0);
@@ -26,29 +24,18 @@ public class Main {
         Point pointF= new Point(6,4);
         Point pointG= new Point(3,4);
 
-        Circle circleOne = new Circle( "circleOne", pointA, pointB);
-        Triangle triangleOne = new Triangle("triangleOne", pointA, pointB, pointC);
-        Rectangle rectangleOne = new Rectangle("rectangleOne", pointD, pointE, pointF, pointG);
+        Circle circleOne = new Circle(pointA, pointB);
+        Triangle triangleOne = new Triangle(pointA, pointB, pointC);
+        Rectangle rectangleOne = new Rectangle(pointD, pointE, pointF, pointG);
 
-        System.out.println(circleOne);
-        circleOne.getPerimetr();
-        circleOne.getArea();
-        System.out.println(circleOne);
+        System.out.println(circleOne.getArea());
+        System.out.println(circleOne.getPerimetr());
 
-
-        System.out.println(triangleOne);
         System.out.println(triangleOne.getArea());
-
         System.out.println(triangleOne.getPerimetr());
-        System.out.println(triangleOne);
 
-
-        System.out.println(rectangleOne);
         System.out.println(rectangleOne.getArea());
-
         System.out.println(rectangleOne.getPerimetr());
-        System.out.println(rectangleOne);
-
 
     }
 }
