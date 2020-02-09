@@ -32,7 +32,7 @@ public class Human {
         this.age = age;
     }
 
-    public boolean isSex() {
+    public boolean getSex() {
         return sex;
     }
 

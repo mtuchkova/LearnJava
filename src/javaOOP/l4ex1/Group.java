@@ -1,5 +1,6 @@
 package javaOOP.l4ex1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Group {
@@ -122,7 +123,7 @@ public class Group {
             if (studentsArray[i] == null){
                 studentsArray[i] = student;
                 student.setGroup(this.groupName);
-                System.out.println(student.getName() + " added to group " + groupName);
+               // System.out.println(student.getName() + " added to group " + groupName);
                 return;
             }
         }
@@ -156,4 +157,33 @@ public class Group {
 
         return null;
     }
-}
+
+    public void sortStudent(int x, boolean reverse) {
+
+        switch (x) {
+            case 1:
+                System.out.println("Sort by name: ");
+                break;
+            case 2:
+                System.out.println("Sort by age: ");
+                break;
+            case 3:
+                System.out.println("Sort by recordBook: ");
+                break;
+            case 4:
+                System.out.println("Sort by sex: ");
+                break;
+        }
+
+        if(reverse == true) {
+            Arrays.sort(this.getStudentsArray(), new UniversalComparator(x).reversed());
+        } else {
+            Arrays.sort(this.getStudentsArray(), new UniversalComparator(x));
+        }
+    }
+
+
+
+    }
+
+
