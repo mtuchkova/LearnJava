@@ -3,7 +3,7 @@ package javaOOP.l4ex1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Group {
+public class Group implements Voencom{
 
 
 
@@ -183,7 +183,24 @@ public class Group {
     }
 
 
-
+    @Override
+    public Student[] getGuysOverEighteen() {
+        int i = 0;
+        for (Student student : studentsArray) {
+            if (student != null && student.getSex() == false && student.getAge() >= 18) {
+                i ++;
+            }
+        }
+        System.out.println(i);
+        Student[] guysOverEighteen = new Student[i];
+        int j = 0;
+        for (Student student : studentsArray) {
+            if (student != null && student.getSex() == false && student.getAge() >= 18) {
+                guysOverEighteen[j++] = student;
+            }
+        }
+        return guysOverEighteen;
     }
+}
 
 

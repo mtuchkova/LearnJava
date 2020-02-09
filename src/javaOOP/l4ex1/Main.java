@@ -25,6 +25,7 @@ public class Main {
             groupOne.addStudentToGroup(new Student("Zina", 21, true,9 ,"FE-81mp"));
             groupOne.addStudentToGroup(new Student("Monstantin", 32,false,18,"FE-81mp"));
             groupOne.addStudentToGroup(new Student("Gena", 13, false,19 ,"FE-81mp"));
+            groupOne.addStudentToGroup(new Student("Lena", 17, true,45 ,"FE-81mp"));
         } catch (OutOfSizeGroupExeption outOfSizeGroupExeption) {
             outOfSizeGroupExeption.printStackTrace();
         }
@@ -32,6 +33,13 @@ public class Main {
 
         groupOne.sortStudent(4, false);
         System.out.println(groupOne);
+
+
+        Student[] guysOverEighteen  = groupOne.getGuysOverEighteen();
+        for (Student student : guysOverEighteen) {
+            System.out.println(student);
+        }
+
 
 //        groupOne.sortStudent(2);
 //        System.out.println(groupOne);

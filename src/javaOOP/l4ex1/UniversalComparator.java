@@ -38,7 +38,6 @@ public class UniversalComparator implements Comparator {
                 return student1.getRecordBook() - (student2.getRecordBook());
             case 4:
                 return Boolean.toString(student1.getSex()).compareTo(Boolean.toString(student2.getSex()));
-
         }
         return 0;
     }
