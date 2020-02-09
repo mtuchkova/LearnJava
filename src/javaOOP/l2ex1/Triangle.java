@@ -5,57 +5,34 @@ public class Triangle extends Shape {
     private Point pointA;
     private Point pointB;
     private Point pointC;
-    private double perimetr;
 
 
-
-    private String name;
-    private double distanceAB;
-    private double distanceBC;
-    private double distanceAC;
-
-
-    public Triangle(String name, Point pointA, Point pointB, Point pointC) {
+    public Triangle( Point pointA, Point pointB, Point pointC) {
         this.pointA = pointA;
         this.pointB = pointB;
         this.pointC = pointC;
-        this.name = name;
-        this.distanceAB = pointA.calculateDistance(pointB);
-        this.distanceBC = pointB.calculateDistance(pointC);
-        this.distanceAC = pointA.calculateDistance(pointC);
     }
 
     public Triangle() {
     }
 
-
-
     @Override
     public double getPerimetr() {
-
-        perimetr = distanceAB + distanceBC + distanceAC;
-        return perimetr;
+        return pointA.calculateDistance(pointB) + pointB.calculateDistance(pointC) +  pointA.calculateDistance(pointC);
     }
 
     @Override
     public double getArea() {
-
-        return Math.sqrt(this.getPerimetr() * (this.getPerimetr() - distanceAB) * (this.getPerimetr() - distanceBC) * (this.getPerimetr() - distanceAC));
-
+        return Math.sqrt(this.getPerimetr() * (this.getPerimetr() - pointA.calculateDistance(pointB)) * (this.getPerimetr() - pointB.calculateDistance(pointC)) * (this.getPerimetr() - pointA.calculateDistance(pointC)));
     }
 
 
     @Override
     public String toString() {
-        return "Triangle{ " +
-                " name='" + name +
-                "pointA=" + pointA +
+        return "Triangle{" +
+                " pointA=" + pointA +
                 ", pointB=" + pointB +
                 ", pointC=" + pointC +
-                ", perimetr=" + perimetr +
-                ", distanceAB=" + distanceAB +
-                ", distanceBC=" + distanceBC +
-                ", distanceAC=" + distanceAC +
                 '}';
     }
 }
