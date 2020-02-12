@@ -5,7 +5,11 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
 
-    MyFileFilter mFF = new MyFileFilter("txt", "pdf");
+
+
+
+//
+        MyFileFilter mFF = new MyFileFilter("txt", "pdf");
     File folder = new File("D:/myFolder");
 
     File[] fileList = folder.listFiles(mFF);
