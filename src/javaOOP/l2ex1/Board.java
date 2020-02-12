@@ -4,8 +4,17 @@ public class Board {
 
     Shape[] cellOfBoard = new Shape[4];
 
-    public void addShape(int i, Shape shape) {
-        
-    }
+    public void addShapeInCell(int i, Shape shape) {
+        if (shape != null && cellOfBoard[i] == null) {
+            cellOfBoard[i] = shape;
+          }
+       
+     }
+
+
+
+
+
+
 
 }
