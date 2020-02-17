@@ -1,5 +1,7 @@
 package javaOOP.l9ex2;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -16,7 +18,7 @@ public class Main {
 
 
         try {
-            //   groupOne.addStudentToGroupCondole();
+            groupOne.addStudentToGroupFromConsole();
             groupOne.addStudentToGroup(new Student("Masha", 5,true,3,"FE-81mp" ));
             groupOne.addStudentToGroup(new Student("Petr", 23, false,4,"FE-81mp" ));
             groupOne.addStudentToGroup(new Student("Denis", 18,false,5,"FE-81mp" ));
@@ -25,22 +27,21 @@ public class Main {
             groupOne.addStudentToGroup(new Student("Konstantin", 31,false,8,"FE-81mp"));
             groupOne.addStudentToGroup(new Student("Zina", 21, true,9 ,"FE-81mp"));
             groupOne.addStudentToGroup(new Student("Monstantin", 32,false,18,"FE-81mp"));
-            groupOne.addStudentToGroup(new Student("Gena", 13, false,19 ,"FE-81mp"));
+           // groupOne.addStudentToGroup(new Student("Gena", 13, false,19 ,"FE-81mp"));
            // groupOne.addStudentToGroup(null);
-            groupOne.addStudentToGroup(new Student("Lena", 17, true,45 ,"FE-81mp"));//groupOne.addStudentToGroup(new Student("Lena", 17, true,45 ,"FE-81mp"));
+           // groupOne.addStudentToGroup(new Student("Lena", 17, true,45 ,"FE-81mp"));//groupOne.addStudentToGroup(new Student("Lena", 17, true,45 ,"FE-81mp"));
         } catch (OutOfSizeGroupExeption outOfSizeGroupExeption) {
             outOfSizeGroupExeption.printStackTrace();
         }
-
+        groupOne.getGuysOverEighteen();
+        System.out.println(groupOne);
 
 //        groupOne.sortStudent(4, false);
 //        System.out.println(groupOne);
 
 
-//        Student[] guysOverEighteen  = groupOne.getGuysOverEighteen();
-//        for (Student student : guysOverEighteen) {
-//            System.out.println(student);
-//        }
+
+
 
     }
 }

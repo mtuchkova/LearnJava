@@ -3,11 +3,13 @@ package javaOOP.l9ex2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Group implements Voencom {
 
     private String groupName;
     private List<Student> studentsArrayList = new ArrayList<>();
+    private List<Student> guysOverEighteen  = new ArrayList<>();
 
 
     public Group(String groupName) {
@@ -33,7 +35,7 @@ public class Group implements Voencom {
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("Group: " + this.groupName).append(System.lineSeparator());
+        sb.append("\nGroup: " + this.groupName).append(System.lineSeparator());
 
         int i = 0;
         for (Student student : studentsArrayList) {
@@ -42,73 +44,76 @@ public class Group implements Voencom {
             sb.append(System.lineSeparator());
 
         }
+
+        sb.append("\nGuys over eighteen in " + this.groupName + ":").append(System.lineSeparator());
+        int j = 0;
+        for (Student student : guysOverEighteen) {
+
+            sb.append((++j) + ") ").append(student);
+            sb.append(System.lineSeparator());
+
+        }
         return sb.toString();
-
-
     }
 
 
-//    public void addStudentToGroupCondole() throws OutOfSizeGroupExeption {
-//
-//        Student newStudent = new Student();
-//
-//        newStudent.setGroup(this.groupName);
-//
-//        System.out.print("Enter record book number: ");
-//        newStudent.setRecordBook(getIntValue());
-//        sc.nextLine();
-//
-//        System.out.print("Enter name: ");
-//        newStudent.setName(getStringValue());
-//
-//        System.out.print("Enter age: ");
-//        newStudent.setAge(getIntValue());
-//        sc.nextLine();
-//
-//
-//        System.out.print("Enter sex: ");
-//        newStudent.setSex(getSex());
-//        System.out.println(newStudent);
-//
-//
-//
-//        for ( int i = 0; i < studentsArray.length; i++) {
-//            if (studentsArray[i] == null){
-//                studentsArray[i] = newStudent;
-//                newStudent.setGroup(this.groupName);
-//                System.out.println(newStudent.getName() + " added to group " + groupName);
-//                return;
-//            }
-//        }
-//        throw new OutOfSizeGroupExeption();
-//    }
-//
-//    Scanner sc = new Scanner(System.in);
-//
-//    public String getStringValue () {
-//      if(sc.hasNextLine()) {
-//          return sc.nextLine();
-//      }
-//        throw new IllegalArgumentException("Here should be string value!");
-//    }
-//
-//    public boolean getSex () {
-//        String sex = sc.nextLine();
-//        if(sex.equals("female")) {
-//            return true;
-//        } else if (sex.equals("male")){
-//            return false;
-//        }
-//        throw new IllegalArgumentException("Here should be (female/male)string value!");
-//    }
-//
-//    public int getIntValue () {
-//        if(sc.hasNextInt()) {
-//            return sc.nextInt();
-//        }
-//        throw new IllegalArgumentException("Here should be int value!");
-//    }
-//
+    public void addStudentToGroupFromConsole() throws OutOfSizeGroupExeption {
+
+        Student newStudent = new Student();
+
+        newStudent.setGroup(this.groupName);
+
+        System.out.print("Enter record book number: ");
+        newStudent.setRecordBook(getIntValue());
+        sc.nextLine();
+
+        System.out.print("Enter name: ");
+        newStudent.setName(getStringValue());
+
+        System.out.print("Enter age: ");
+        newStudent.setAge(getIntValue());
+        sc.nextLine();
+
+
+        System.out.print("Enter sex: ");
+        newStudent.setSex(getSex());
+
+
+
+        if (studentsArrayList.size() < 10) {
+            this.getStudentsArrayList().add(newStudent);
+            return;
+        }
+
+        throw new OutOfSizeGroupExeption();
+    }
+
+    Scanner sc = new Scanner(System.in);
+
+    public String getStringValue() {
+        if (sc.hasNextLine()) {
+            return sc.nextLine();
+        }
+        throw new IllegalArgumentException("Here should be string value!");
+    }
+
+    public boolean getSex() {
+        String sex = sc.nextLine();
+        if (sex.equals("female")) {
+            return true;
+        } else if (sex.equals("male")) {
+            return false;
+        }
+        throw new IllegalArgumentException("Here should be (female/male)string value!");
+    }
+
+    public int getIntValue() {
+        if (sc.hasNextInt()) {
+            return sc.nextInt();
+        }
+        throw new IllegalArgumentException("Here should be int value!");
+    }
+
 
 
     public void addStudentToGroup(Student student) throws OutOfSizeGroupExeption {
@@ -179,19 +184,17 @@ public class Group implements Voencom {
 //
 //
     @Override
-    public Student[] getGuysOverEighteen() {
+    public List<Student> getGuysOverEighteen() {
         int i = 0;
         for (Student student : studentsArrayList) {
-            if (student != null && student.getSex() == false && student.getAge() >= 18) {
+            if (!student.getSex() && student.getAge() >= 18) {
                 i++;
             }
         }
-        System.out.println(i);
-        Student[] guysOverEighteen = new Student[i];
-        int j = 0;
+
         for (Student student : studentsArrayList) {
-            if (student != null && student.getSex() == false && student.getAge() >= 18) {
-                guysOverEighteen[j++] = student;
+            if (!student.getSex() && student.getAge() >= 18) {
+                guysOverEighteen.add(student);
             }
         }
         return guysOverEighteen;

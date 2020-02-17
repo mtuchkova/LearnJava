@@ -1,6 +1,8 @@
 package javaOOP.l9ex2;
 
+import java.util.List;
+
 public interface Voencom {
-    Student[] getGuysOverEighteen();
+    List<Student> getGuysOverEighteen();
 
 }
