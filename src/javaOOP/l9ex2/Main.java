@@ -18,7 +18,7 @@ public class Main {
 
 
         try {
-            groupOne.addStudentToGroupFromConsole();
+           // groupOne.addStudentToGroupFromConsole();
             groupOne.addStudentToGroup(new Student("Masha", 5,true,3,"FE-81mp" ));
             groupOne.addStudentToGroup(new Student("Petr", 23, false,4,"FE-81mp" ));
             groupOne.addStudentToGroup(new Student("Denis", 18,false,5,"FE-81mp" ));
@@ -35,6 +35,13 @@ public class Main {
         }
         groupOne.getGuysOverEighteen();
         System.out.println(groupOne);
+
+        groupOne.deleteStudentFromGroup(7);
+        System.out.println(groupOne);
+
+        System.out.println(groupOne.searchStudentInGroup("Kina"));
+
+
 
 //        groupOne.sortStudent(4, false);
 //        System.out.println(groupOne);

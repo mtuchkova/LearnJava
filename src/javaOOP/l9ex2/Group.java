@@ -131,58 +131,58 @@ public class Group implements Voencom {
         throw new OutOfSizeGroupExeption();
     }
 
-    //    public boolean deleteStudentFromGroup(int recordBook) {
-//        for ( int i = 0; i < studentsArray.length; i++) {
-//            if (studentsArray[i] != null && studentsArray[i].getRecordBook() == recordBook){
-//                studentsArray[i] = null;
-//                System.out.println("Student with record book " + recordBook + " removed from " + groupName);
-//                return true ;
-//            }
-//
-//        }
-//
-//        System.out.println("There is no such student! record book: " + recordBook);
-//        return false;
-//    }
-//
-//
-//
-//
-//    public Student searchStudentInGroup(String name) {
-//        for ( Student student : studentsArray) {
-//            if (student != null && student.getName().equals(name)){
-//                return student;
-//            }
-//        }
-//
-//        return null;
-//    }
-//
-//    public void sortStudent(int x, boolean reverse) {
-//
-//        switch (x) {
-//            case 1:
-//                System.out.println("Sort by name: ");
-//                break;
-//            case 2:
-//                System.out.println("Sort by age: ");
-//                break;
-//            case 3:
-//                System.out.println("Sort by recordBook: ");
-//                break;
-//            case 4:
-//                System.out.println("Sort by sex: ");
-//                break;
-//        }
-//
-//        if(reverse == true) {
-//            Arrays.sort(this.getStudentsArray(), new UniversalComparator(x).reversed());
-//        } else {
-//            Arrays.sort(this.getStudentsArray(), new UniversalComparator(x));
-//        }
-//    }
-//
-//
+        public boolean deleteStudentFromGroup(int recordBook) {
+        for (Student temp : studentsArrayList) {
+            if (temp.getRecordBook() == recordBook){
+                this.getStudentsArrayList().remove(temp);
+                System.out.println("Student with record book " + recordBook + " removed from " + groupName);
+                return true ;
+            }
+
+        }
+
+        System.out.println("There is no such student! record book: " + recordBook);
+        return false;
+    }
+
+
+
+
+    public Student searchStudentInGroup(String name) {
+        for ( Student student : studentsArrayList) {
+            if (student.getName().equals(name)){
+                return student;
+            }
+        }
+        return null;
+    }
+
+
+    public void sortStudent(int x, boolean reverse) {
+
+        switch (x) {
+            case 1:
+                System.out.println("Sort by name: ");
+                break;
+            case 2:
+                System.out.println("Sort by age: ");
+                break;
+            case 3:
+                System.out.println("Sort by recordBook: ");
+                break;
+            case 4:
+                System.out.println("Sort by sex: ");
+                break;
+        }
+
+        if(reverse == true) {
+            Arrays.sort(this.getStudentsArrayList(), new UniversalComparator(x).reversed());
+        } else {
+            Arrays.sort(this.getStudentsArrayList(), new UniversalComparator(x));
+        }
+    }
+
+
     @Override
     public List<Student> getGuysOverEighteen() {
         int i = 0;
