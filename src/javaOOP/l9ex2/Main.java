@@ -43,10 +43,12 @@ public class Main {
 
 
 
-//        groupOne.sortStudent(4, false);
-//        System.out.println(groupOne);
+        groupOne.sortStudentByConvertingToArray(2, false);
+        System.out.println(groupOne);
 
 
+        groupOne.sortStudentByList(4, true);
+        System.out.println(groupOne);
 
 
 

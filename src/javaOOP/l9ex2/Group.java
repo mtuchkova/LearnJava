@@ -1,9 +1,6 @@
 package javaOOP.l9ex2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Group implements Voencom {
 
@@ -158,7 +155,7 @@ public class Group implements Voencom {
     }
 
 
-    public void sortStudent(int x, boolean reverse) {
+    public void sortStudentByConvertingToArray(int x, boolean reverse) {
 
         switch (x) {
             case 1:
@@ -175,13 +172,43 @@ public class Group implements Voencom {
                 break;
         }
 
+        Student[] studentsArray =  studentsArrayList.toArray( new Student[this.getStudentsArrayList().size()]);
+
         if(reverse == true) {
-            Arrays.sort(this.getStudentsArrayList(), new UniversalComparator(x).reversed());
+            Arrays.sort(studentsArray, new UniversalComparator(x).reversed());
+            studentsArrayList = Arrays.asList(studentsArray);
         } else {
-            Arrays.sort(this.getStudentsArrayList(), new UniversalComparator(x));
+            Arrays.sort(studentsArray, new UniversalComparator(x));
+            studentsArrayList = Arrays.asList(studentsArray);
         }
     }
 
+    public void sortStudentByList(int x, boolean reverse) {
+
+        switch (x) {
+            case 1:
+                System.out.println("Sort by name: ");
+                break;
+            case 2:
+                System.out.println("Sort by age: ");
+                break;
+            case 3:
+                System.out.println("Sort by recordBook: ");
+                break;
+            case 4:
+                System.out.println("Sort by sex: ");
+                break;
+        }
+
+        Student[] studentsArray =  studentsArrayList.toArray( new Student[this.getStudentsArrayList().size()]);
+
+        if(reverse == true) {
+            Collections.sort(studentsArrayList, new UniversalComparator(x).reversed());
+        } else {
+            Arrays.sort(studentsArray, new UniversalComparator(x));
+            Collections.sort(studentsArrayList, new UniversalComparator(x));
+        }
+    }
 
     @Override
     public List<Student> getGuysOverEighteen() {
