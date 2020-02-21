@@ -1,5 +1,7 @@
 package javaOOP.l9ex4;
 
+import  javaOOP.l9ex4.LineForDoubleCola;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -9,6 +11,8 @@ public class Main {
 //        аппарат с чудесным напитком. Например, если было выдано только два стакана, то очередь выглядит как:
 //        [Volovitc, Kutrapalli, Penny, Sheldon, Sheldon, Leonard, Leonard]
 
+        System.out.println(LineForDoubleCola.getQueueForDoubleCola);
+        System.out.println();
 
 
 
