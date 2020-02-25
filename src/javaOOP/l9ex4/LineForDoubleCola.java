@@ -6,16 +6,19 @@ import java.util.List;
 
 public  class LineForDoubleCola {
 
-  private static List<String> queueForDoubleCola = new ArrayList<>(Arrays.asList("Sheldon","Leonard","Volovitc","Kutrapalli","Penny"));
+  private  List<String> queueForDoubleCola = new ArrayList<>(Arrays.asList("Sheldon","Leonard","Volovitc","Kutrapalli","Penny"));
 
     public  List<String> getQueueForDoubleCola() {
         return queueForDoubleCola;
     }
 
-//    public static List<String> changeQueueForDoubleCola(List<String> queueForDoubleCola,int a) {
-//
-//
-//
-//        return queueForDoubleCola;
-//    }
+    public List<String> changeQueueForDoubleCola(int a) {
+
+        for (int i =0; i < a; i++){
+            queueForDoubleCola.add(queueForDoubleCola.get(0));
+            queueForDoubleCola.add(queueForDoubleCola.get(0));
+            queueForDoubleCola.remove(0);
+        }
+        return queueForDoubleCola;
+    }
 }

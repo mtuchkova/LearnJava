@@ -15,7 +15,9 @@ public class Main {
 //        аппарат с чудесным напитком. Например, если было выдано только два стакана, то очередь выглядит как:
 //        [Volovitc, Kutrapalli, Penny, Sheldon, Sheldon, Leonard, Leonard]
 
-        List<String> queueForDoubleCola = new ArrayList<>(Arrays.asList("Sheldon","Leonard","Volovitc","Kutrapalli","Penny"));
+        LineForDoubleCola line1 = new LineForDoubleCola();
+        System.out.println(line1.getQueueForDoubleCola());
+        System.out.println(line1.changeQueueForDoubleCola(5));
 
 
 
