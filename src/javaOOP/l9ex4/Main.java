@@ -18,6 +18,7 @@ public class Main {
         LineForDoubleCola line1 = new LineForDoubleCola();
         System.out.println(line1.getQueueForDoubleCola());
         System.out.println();
+        System.out.println();
         System.out.println(line1.changeQueueForDoubleCola(6));
 
 
