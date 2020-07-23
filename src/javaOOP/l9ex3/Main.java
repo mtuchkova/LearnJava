@@ -7,6 +7,6 @@ public class Main {
 
 
 
-a;
+int a= 239939;
     }
 }
