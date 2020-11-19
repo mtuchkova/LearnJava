@@ -7,5 +7,7 @@ public class l8lev1ex2 {
 
     static void concatenation(String string, int number, float floatNumber){
 
+
+
     }
 }
