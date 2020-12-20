@@ -1,4 +1,4 @@
-package javaStart;
+package javaStart.lesson3.level2;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package javaStart;
+package javaStart.lesson4.level1;
 
 public class l4lev1ex3 {
     public static void main(String[] args) {
