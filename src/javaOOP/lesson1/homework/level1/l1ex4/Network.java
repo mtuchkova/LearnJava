@@ -1,23 +1,28 @@
 package javaOOP.lesson1.homework.level1.l1ex4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Network {
 
-    protected String mobileOperator;
-    Phone[] arrayNumber =new Phone[10];
+    private String mobileOperator;
+    private List<String> arrayNumber = new ArrayList<>();
 
     public Network(String mobileOperator) {
         this.mobileOperator = mobileOperator;
-
     }
 
+    public List<String> getArrayNumber() {
+        return arrayNumber;
+    }
 
-
-
-
+    public void addToArrayNumber(String number) {
+        this.arrayNumber.add(number);
+    }
 
     public void printArrayNumber() {
-        for (int i = 0; i<arrayNumber.length; i++){
-            System.out.println(arrayNumber[i]);
+        for (String number : arrayNumber) {
+            System.out.println(number);
         }
     }
 }

@@ -13,10 +13,12 @@ public class Main {
 
         Phone phoneMasha = new Phone("+380637388456", "Masha");
         Phone phoneDenis = new Phone("+380953238394", "Denis");
-        Network life = new Network("life");
-
-        System.out.println(phoneMasha);
-        System.out.println(phoneDenis);
+        Network vodafone = new Network("vodafone");
+        phoneDenis.registerInMobileOperator(vodafone);
+        vodafone.printArrayNumber();
+        System.out.println(phoneDenis.call(vodafone, phoneMasha.getNumber()));
+        phoneMasha.registerInMobileOperator(vodafone);
+        System.out.println(phoneDenis.call(vodafone, phoneMasha.getNumber()));
 
     }
 }

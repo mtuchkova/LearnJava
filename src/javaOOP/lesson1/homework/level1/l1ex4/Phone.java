@@ -13,7 +13,6 @@ public class Phone {
     public Phone() {
     }
 
-
     public String getNumber() {
         return number;
     }
@@ -30,22 +29,13 @@ public class Phone {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Phone{" +
-                "number='" + number + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
-    public void registerInMobileOperator() {
+    public void registerInMobileOperator(Network network) {
 //  Телефон должен иметь метод
 //  регистрации в сети мобильного оператора.
+        network.addToArrayNumber(this.number);
     }
 
-
-
-    public void call() {
+    public String call(Network network, String number) {
 
 //       Также у телефона должен быть метод call
 //       (номер другого телефона) который переберет все телефоны, зарегистрированные в
@@ -53,8 +43,17 @@ public class Phone {
 
 //        Если такой номер будет найден, то осуществить вызов, если нет - вывести
 //        сообщение об ошибочности набранного номера.
+        for (String phone : network.getArrayNumber()) {
+            if (phone.equals(number)) return "Calling!";
+        }
+        return "The number that you called cannot be reached at this time.";
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "number='" + number + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
